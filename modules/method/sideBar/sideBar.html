@@ -1,5 +1,5 @@
-<ul class="sideBar" ng-controller="SidebarCtrl">
+<ul ng-controller="SidebarCtrl">
     <li ng-repeat="step in model">
-        {{$index}}
+        <a ui-sref="app.step({id:$index + 1})" ui-sref-active="arrow_box"><i>{{$index +1 }}.</i> </a>
     </li>
 </ul>

@@ -1,4 +1,68 @@
-header{
-    height: 50px;
-    background-color: #EEFF9D;
+header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 50px;
+   background: darken(#009cff, 10%);
+   z-index: 999;
+
+   a {
+      color: #FFFFFF;
+   }
+
+   #logo {
+      float: left;
+      width: 210px;
+      height: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 50px;
+      color: #fff;
+      background: #009cff;
+      z-index: 999;
+      box-sizing: border-box;
+      padding: 0 20px;
+
+      .glyphicon {
+         top: 4px;
+         margin-right: 10px;
+      }
+   }
+
+   .inner {
+      margin-left: 210px;
+
+      .btn-default {
+         font-size: 12px;
+         width: 50px;
+         color: #fff;
+         background: #009cff;
+         border-color: lighten(#009cff, 25%);
+         border-width: 2px;
+      }
+
+      .btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group {
+         margin-left: -2px;
+      }
+
+      #editor-buttons {
+         float: left;
+         width: 50%;
+         box-sizing: border-box;
+         height: 50px;
+         padding: 7px 30px;
+         background: darken(#009cff, 5%);
+      }
+
+      #view-buttons {
+         float: right;
+         width: 100%;
+         box-sizing: border-box;
+         height: 50px;
+         padding: 7px 30px;
+         background: darken(#009cff, 10%);
+         border-left: 1px solid darken(#009cff, 12%);
+      }
+   }
 }

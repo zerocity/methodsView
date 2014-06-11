@@ -1,4 +1,13 @@
-<div ng-controller="TopbarCtrl">
-    <p>topbar</p>
+<section id="logo">
+   <a ui-sref="app"><i class="fa fa-tasks"></i> methods.io</a>
+</section>
+<div class="inner">
+   <div id="view-buttons">
+      <div class="btn-group pull-right">
+         <button ng-click="main.toggelEditor()" type="button" class="btn btn-default">
+            <i class="fa fa-eye"></i>
+         </button>
+         <button type="button" class="btn btn-default"><i class="fa fa-print"></i></button>
+      </div>
+   </div>
 </div>
-

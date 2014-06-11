@@ -1,0 +1,58 @@
+<section id="viewStep" ng-controller="StepidCtrl" ng-style="style()" resize>
+    <article class="step" >
+
+        <dl class="content">
+            <h1>{{currentId }} - {{step.title}}</h1>
+            <section>
+                <dt>Context:</dt>
+                <dd>{{step.context}}</dd>
+            </section>
+
+            <section class="highlights" ng-hide="{{step.highlights == ''}}" >
+                <dt ng-hide="step.highlights == '' ">Highlight :</dt>
+                <dd>{{step.highlights}}</dd>
+            </section>
+
+            <section class="critical" ng-hide="{{step.critical == ''}}" >
+                <dt>Critical</dt>
+                <dd>{{step.critical}}</dd>
+            </section>
+
+            <!-- Mixing components  -->
+            <dl class="mixing" ng-show="{{step.type == 'mixing'}}">
+                <h1>Solution Preperation</h1>
+
+                <section class="solution" ng-repeat="solutions in step.mixing">
+                    <h1>Solution title : {{solutions.title}}</h1>
+                    <ul>
+                        <li ng-repeat="component in solutions.solution ">
+                            <p>
+                                <span ng-hide="{{$first}}">+</span>{{component.volume}}{{component.unit}} {{component.name}}
+                                <span ng-hide="{{component.concentration == ''}}">
+                                    [{{component.concentration }} {{component.concentrationUnit}}]
+                                </span>
+                            </p>
+                            <dl class="consideration" ng-hide="{{component.consideration == ''}}">
+                                <dt>Attention</dt>
+                                <dd>{{component.consideration}}</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </section>
+            </dl>
+
+            <!-- Reactions metadata -->
+            <dl class="reaction" ng-show="{{step.type == 'reaction'}}">
+                <dt>Reaction Conditions</dt>
+                <dd>{{step.reaction.time}} {{step.reaction.unit}} @ {{step.reaction.temperature}} °C</dd>
+            </dl>
+        </dl>
+
+        <section class="clear action">
+            <h1>User Input</h1>
+            <a ui-sref="app.step({id:prevId})" class="btn btn-default" >back</a>
+            <a ui-sref="app.step({id:nextId})" class="btn btn-default" >next</a>
+        </section>
+
+    </article>
+</section>

@@ -23,6 +23,9 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+  <script src="bower_components/pouchdb/dist/pouchdb-nightly.js"></script>
+  <script src="bower_components/angular-pouchdb/angular-pouchdb.js"></script>
+
   <!-- Add New Bower Component JS Above -->
 
 
@@ -32,12 +35,16 @@
   <script src="modules/method/step-service/step-service.js"></script>
   <script src="modules/method/topBar/topBar.js"></script>
   <script src="modules/method/sideBar/sideBar.js"></script>
+  <script src="modules/comment/comment-service/comment-service.js"></script>
+  <script src="modules/comment/comment-view/comment-view.js"></script>
+  <script src="modules/method/directive/resize.js"></script>
+  <script src="modules/method/stepId/stepId.js"></script>
   <!-- Add New Component JS Above -->
 
 
-   <header ui-view="topBar"></header>
-   <nav ui-view="sideBar"></nav>
-   <div ui-view="content" class="stepView"></div>
+   <header ui-view="topbar"></header>
+   <aside id="toc" ui-view="sidebar"></aside>
+   <div class="content" id="main" ui-view="content"></div>
 
 </body>
 </html>

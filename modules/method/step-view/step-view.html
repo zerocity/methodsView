@@ -1,51 +1,52 @@
 <div ng-controller="StepViewCtrl">
 
-    <h1> {{ model.procedure[0].processGroupTitle}} </h1>
+    <section id="page">
+        <h1>{{ model.procedure[0].processGroupTitle}}</h1>
 
-    <ul>
-        <li ng-repeat="step in model.procedure[0].processSteps" >
-            <h1>{{$index +1 }} {{step.title}}</h1>
-            <dl>
-                <dt>Context: </dt>
-                <dd>{{step.context}}</dd>
+        <ul >
+            <li class="step" ng-repeat="step in model.procedure[0].processSteps">
+                <h1>{{$index +1 }} - {{step.title}}</h1>
+                <dl>
+                    <dt>Context:</dt>
+                    <dd>{{step.context}}</dd>
 
-                <dt ng-hide="step.highlights == '' ">Highlight :</dt>
-                <dd>{{step.highlights}}</dd>
+                    <dt ng-hide="step.highlights == '' ">Highlight :</dt>
+                    <dd>{{step.highlights}}</dd>
 
-                <!-- Mixing components  -->
-                <dl ng-show="{{step.type == 'mixing'}}">
-                    <h1>Solution Preperation</h1>
-                    <dt ng-repeat-start="solutions in step.mixing">
-                        Solution title : {{solutions.title}}
-                    </dt>
-                    <dd ng-repeat-end>
-                        <ul>
-                            <li ng-repeat="component in solutions.solution ">
-                                <p> <span ng-hide="{{$first}}">+</span> {{component.volume}}{{component.unit}} {{component.name}}
-                                <span ng-hide="{{component.concentration == ''}}" >
-                                    [{{component.concentration }} {{component.concentrationUnit}}]
-                                </span>
-                                </p>
-                                <dl ng-hide="{{component.consideration == ''}}">
-                                    <dt>Attention</dt>
-                                    <dd>{{component.consideration}}</dd>
-                                </dl>
-                            </li>
-                        </ul>
-                    </dd>
+                    <!-- Mixing components  -->
+                    <dl class="mixing" ng-show="{{step.type == 'mixing'}}">
+                        <h1>Solution Preperation</h1>
+
+                        <section class="solution" ng-repeat="solutions in step.mixing">
+                            <h1>Solution title : {{solutions.title}}</h1>
+                            <ul>
+                                <li ng-repeat="component in solutions.solution ">
+                                    <p>
+                                        <span ng-hide="{{$first}}">+</span>{{component.volume}}{{component.unit}} {{component.name}}
+                                        <span ng-hide="{{component.concentration == ''}}">
+                                            [{{component.concentration }} {{component.concentrationUnit}}]
+                                        </span>
+                                    </p>
+                                    <dl class="consideration" ng-hide="{{component.consideration == ''}}">
+                                        <dt>Attention</dt>
+                                        <dd>{{component.consideration}}</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </section>
+                    </dl>
+
+                    <dt ng-hide="{{step.critical == ''}}">Critical</dt>
+                    <dd ng-hide="{{step.critical == ''}}">{{step.critical}}</dd>
+
+                    <!-- Reactions metadata -->
+                    <dl class="reaction" ng-show="{{step.type == 'reaction'}}">
+                        <dt>Reaction Conditions</dt>
+                        <dd>{{step.reaction.time}} {{step.reaction.unit}} @ {{step.reaction.temperature}} °C</dd>
+                    </dl>
                 </dl>
-
-                <dt ng-hide="{{step.critical == ''}}" >Critical</dt>
-                <dd ng-hide="{{step.critical == ''}}" >{{step.critical}}</dd>
-
-                <!-- Reactions metadata -->
-                <dl ng-show="{{step.type == 'reaction'}}">
-                    <dt>Reaction Conditions</dt>
-                    <dd>{{step.reaction.time}} {{step.reaction.unit}} @ {{step.reaction.temperature}} °C</dd>
-                </dl>
-            </dl>
-        </li>
-    </ul>
-
+            </li>
+        </ul>
+    </section>
 
 </div>
