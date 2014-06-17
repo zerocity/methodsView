@@ -1,10 +1,10 @@
 <div ng-controller="StepViewCtrl">
 
     <section id="page">
-        <h1>{{ model.procedure[0].processGroupTitle}}</h1>
+        <h1 class="groupTitle">{{ protocol.processGroupTitle}}</h1>
 
         <ul >
-            <li class="step" ng-repeat="step in model.procedure[0].processSteps">
+            <li class="step" ng-repeat="step in steps">
                 <h1>{{$index +1 }} - {{step.title}}</h1>
                 <dl>
                     <dt>Context:</dt>

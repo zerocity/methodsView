@@ -3,6 +3,17 @@
 </section>
 <div class="inner">
    <div id="view-buttons">
+
+      <a ui-sref="app" ui-sref-active="arrow_box">
+        all steps siRna |
+      </a>
+      <a ui-sref="app.step({protocol:0, group:0, id:1})" ui-sref-active="arrow_box">
+        siRna |
+      </a>
+      <a ui-sref="app.step({protocol:1, group:0, id:1})" ui-sref-active="arrow_box">
+        Axl Eliza
+      </a>
+
       <div class="btn-group pull-right">
          <button ng-click="main.toggelEditor()" type="button" class="btn btn-default">
             <i class="fa fa-eye"></i>
