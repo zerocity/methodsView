@@ -21,8 +21,23 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     };
 
     var viewStep = {
-         url:'step/:id',
-         views:{
+        url:'protocol/:protocol/:group/:id',
+        resolve:{
+            stepList: function (stepService,$stateParams) {
+                var protocolId = $stateParams.protocol,
+                    id  = $stateParams.id,
+                    group  = $stateParams.group;
+                var protocol  = stepService[protocolId].content.procedure;
+                var steps = protocol[group].processSteps;
+                console.log(steps);
+                return {'protocolId':protocolId,'group':group,'steps': steps,'stepId':id};
+            }
+        },
+        views:{
+                'sidebar@':{
+                    controller: 'SidebarChildCtrl',
+                    templateUrl:'modules/method/sideBar/sideBar.html'
+                },
                'content@':{
                   controller: 'StepidCtrl',
                   templateUrl:'modules/method/stepId/stepId.html'
@@ -45,8 +60,6 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
        .state('app',basicLayout)
        .state('app.step',viewStep)
        .state('app.test',comment);
-
-
 
     $urlRouterProvider.otherwise('/');
 
