@@ -1,112 +1,122 @@
-.box {
-    border: 1px solid #AFAFAF;
-    border-radius: 3px;
+body {
+    color: #333;
+    background: #eee;
+}
+
+h1:first-child, h2:first-child {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.step {
+    margin-left: 40px;
 }
 
 #viewStep {
+
+}
+
+.process {
+    float: left;
+    width: 100%;
     background: #fff;
+}
+
+/* .process-number {
+    display: block;
+    color: #555;
+    font-size: 24px;
+    width: 44px;
+    height: 44px;
+    line-height: 24px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    background: #eee;
+} */
+
+.process-description {
+    float: left;
+    width: 60%;
+    min-height: 300px;
+    box-sizing: border-box;
     padding: 20px;
+}
 
-    .step {
-        height: 100%;
+.process-images {
+    float: right;
+    width: 112px;
+    height: 112px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 20px;
 
-        border: 1px solid #AFAFAF;
-        border-radius: 3px;
-        list-style: none;
-        padding: 5px;
-
-        .content{
-            height: 75%;
-
-            h1 {
-                margin-top: 5px;
-                margin-left: 5px;
-                margin-right: 5px;
-
-                padding-left: 10px;
-                padding-right: 10px;
-                padding-bottom: 5px;
-                font-size: 1.5em;
-                border-bottom: 1px solid #AFAFAF;
-            }
-
-            ul {
-                padding-left: 0px;
-            }
-
-            dt, dd {
-                padding-button: 5px;
-            }
-
-            dt{
-                text-decoration: underline;
-            }
-
-            .mixing {
-
-                h1 {
-                    margin-top: 15px;
-                    margin-bottom: 15px;
-                    margin-left: 0px;
-                    margin-right: 5px;
-
-                    border-bottom: 1px solid #AFAFAF;
-                    font-size: 1.3em;
-
-                    padding-bottom: 5px;
-                    padding-left: 0px;
-                }
-
-                .solution {
-
-                    border: 1px solid #AFAFAF;
-                    border-radius: 3px;
-                    padding: 5px;
-                    margin-bottom: 5px;
-                    margin-left: 3%;
-                    width: 40%;
-                    height: 200px;
-
-                    float: left;
-                    margin-right: 10px;
-
-                    li {
-                        list-style: none;
-                    }
-
-                    .consideration {
-                        margin-bottom: 15px;
-                    }
-
-                    hr {
-                        border: 0 none;
-                        clear: both;
-                    }
-                }
-            }
-
-            .critical{
-            }
-
-        }
-
-       .action{
-            h1 {
-                margin-top: 5px;
-                margin-left: 5px;
-                margin-right: 5px;
-
-                padding-left: 10px;
-                padding-right: 10px;
-                padding-bottom: 5px;
-                font-size: 1.5em;
-                border-bottom: 1px solid #AFAFAF;
-            }
-        }
-
-        .clear {
-            clear: both;
-        }
-
+    .inner {
+        float: right;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
     }
 }
+
+.mixing {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.solution {
+    float: left;
+    width: 49%;
+    height: 200px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ddd;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-right: 2%;
+
+    ul {
+        padding-left: 0;
+
+        li {
+        list-style: none;
+        margin-left: none;
+        }
+    }
+}
+
+.solution:last-child {
+    margin-right: 0;
+}
+
+
+.action {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+    .inner {
+        float: left;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px 20px 20px 60px;
+    }
+}
+

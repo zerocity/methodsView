@@ -1,29 +1,44 @@
 <section id="viewStep" ng-controller="StepidCtrl" ng-style="style()" resize>
     <article class="step" >
+        <section class="content">
+            <section class="process">
+                <section class="process-description">
+                    <!--<span class="process-number">{{currentId }}</span>-->
+                    <h1>{{step.title}}</h1>
+                    <section>
+                        <h3>Context:</h3>
+                        <p>{{step.context}}</p>
+                    </section>
 
-        <dl class="content">
-            <h1>{{currentId }} - {{step.title}}</h1>
-            <section>
-                <dt>Context:</dt>
-                <dd>{{step.context}}</dd>
-            </section>
+                    <section class="highlights" ng-hide="{{step.highlights == ''}}" >
+                        <h3 ng-hide="step.highlights == '' ">Highlight :</h3>
+                        <p>{{step.highlights}}</p>
+                    </section>
 
-            <section class="highlights" ng-hide="{{step.highlights == ''}}" >
-                <dt ng-hide="step.highlights == '' ">Highlight :</dt>
-                <dd>{{step.highlights}}</dd>
-            </section>
+                    <section class="critical" ng-hide="{{step.critical == ''}}" >
+                        <h3>Critical</h3>
+                        <p>{{step.critical}}</p>
+                    </section>
 
-            <section class="critical" ng-hide="{{step.critical == ''}}" >
-                <dt>Critical</dt>
-                <dd>{{step.critical}}</dd>
+                    <!-- Reactions metadata -->
+                    <section class="reaction" ng-show="{{step.type == 'reaction'}}">
+                        <h3>Reaction Conditions</h3>
+                        <p>{{step.reaction.time}} {{step.reaction.unit}} @ {{step.reaction.temperature}} °C</p>
+                    </section>
+                </section>
+                <section class="process-images">
+                    <section class="inner">
+                        <img src="modules/method/stepId/images/dummy.jpg" />
+                    </section>
+                </section>
             </section>
 
             <!-- Mixing components  -->
-            <dl class="mixing" ng-show="{{step.type == 'mixing'}}">
+            <section class="mixing" ng-show="{{step.type == 'mixing'}}">
                 <h1>Solution Preperation</h1>
 
                 <section class="solution" ng-repeat="solutions in step.mixing">
-                    <h1>Solution title : {{solutions.title}}</h1>
+                    <h2>Solution title : {{solutions.title}}</h2>
                     <ul>
                         <li ng-repeat="component in solutions.solution ">
                             <p>
@@ -39,20 +54,14 @@
                         </li>
                     </ul>
                 </section>
-            </dl>
-
-            <!-- Reactions metadata -->
-            <dl class="reaction" ng-show="{{step.type == 'reaction'}}">
-                <dt>Reaction Conditions</dt>
-                <dd>{{step.reaction.time}} {{step.reaction.unit}} @ {{step.reaction.temperature}} °C</dd>
-            </dl>
-        </dl>
-
-        <section class="clear action">
-            <h1>User Input</h1>
-            <a ui-sref="app.step({protocol:0 , group:0, id:prevId})" class="btn btn-default" >back</a>
-            <a ui-sref="app.step({protocol:0 , group:0, id:nextId})" class="btn btn-default" >next</a>
+            </section>
         </section>
 
+        <section class="action">
+            <section class="inner">
+                <a ui-sref="app.step({protocol:0 , group:0, id:prevId})" class="btn btn-default pull-left" >back</a>
+                <a ui-sref="app.step({protocol:0 , group:0, id:nextId})" class="btn btn-default pull-right" >next</a>
+            </section>
+        </section>
     </article>
 </section>
