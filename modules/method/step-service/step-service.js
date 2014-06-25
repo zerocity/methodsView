@@ -582,7 +582,7 @@ var proctocols = [
         "title":"AXL Elisa",
         "content": humanAxl
     }
-]
+];
 
 	return proctocols;
 });
