@@ -17,12 +17,13 @@
 	- Equipments Card
 	- Solution Card
 	- Step Cards
-
+    - Reference Card
 - Protocol Summary
 - User Settings
 - Content Page
 - Protocol QA Page
 - Protocol Upload
+- Features
 
 
 ## Modules:
@@ -45,12 +46,13 @@
 - Form
 
 ### Protocol Cards
-- Account 
+- Account
 - Card Navigation
 - Media Switcher
 - QA Ticketsystem
 - Unit Conversion
 - Equipment Usage
+- Notes
 
 ### Protocol Summary
 - PDF Generator
@@ -67,6 +69,7 @@
 
 # Future Stuff
 
+- revision system entered values + reason for change the value
 - User Rolls
 - Labratory Settings
 - Method Editor
