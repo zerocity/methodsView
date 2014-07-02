@@ -6,11 +6,11 @@
 
 ## Views:
 
-- Start Page
-- Sign Up
-- Protocol List
-- Search List
-- Protocol Settings
+X - Start Page
+X - Sign Up
+X - Protocol List
+X - Search List
+X- Protocol Settings
 - Protocol Cards
 	- Intro Card
 	- Material Card
@@ -18,11 +18,11 @@
 	- Solution Card
 	- Step Cards
     - Reference Card
-- Protocol Summary
-- User Settings
+X - Protocol Summary
+X - User Settings
 - Content Page
-- Protocol QA Page
-- Protocol Upload
+X - Protocol QA Page
+X - Protocol Upload
 - Features
 
 
