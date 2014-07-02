@@ -42,6 +42,9 @@
 - Search
 - Categories
 
+### Search List
+- pagination
+
 ### Protocol Settings
 - Form
 
