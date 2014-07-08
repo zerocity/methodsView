@@ -58,19 +58,19 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     /*HOME*/
 
     var homeLayout = {
-        url:'/home',
+        url:'/',
         views:{
-            'topbar@':{
+            'topbar':{
                 controller: 'HeaderhomeCtrl',
                 templateUrl:'modules/home/headerHome/headerHome.html'
             },
-            'sidebar@':{ // todo wronge nameing
+            'sidebar':{ // todo wronge nameing
                 controller: 'NavhomeCtrl',
                 templateUrl:'modules/home/navHome/navHome.html'
             },
-            'content@':{
+            'content':{
                 controller:'ContenthomeCtrl',
-                templateUrl:'modules/home/contentHome.html'
+                templateUrl:'/modules/home/contentHome/contentHome.html'
             }
         }
     };
@@ -131,13 +131,15 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
 
     /* Add New States Above */
     $stateProvider
-       .state('app',basicLayout)
-       .state('app.home',homeLayout)
+       .state('app',basicLayout)                                // route --> /basic
 
-       .state('app.user.signup',userSignup)
-       .state('app.user.setting',userSettings)
+       .state('home',homeLayout)                                // route --> /
+       .state('home.upload',homeLayout)                         // TODO route --> /upload
 
-       .state('app.protocol.list',protocolList)
+       .state('user.signup',userSignup)                         // route --> /user/signup
+       .state('user.setting',userSettings)                      // route --> /user/settings
+
+       .state('app.protocol.list',protocolList)                 //
        .state('app.protocol.settings',protocolSettings)
        .state('app.protocol.summary',protocolSummary)
        // refactor to protocol step card
