@@ -15,9 +15,9 @@ X- Protocol Settings
 	- Intro Card
 	- Material Card
 	- Equipments Card
-	- Solution Card
-	- Step Cards
-    - Reference Card
+	X - Solution Card
+	X - Step Cards
+    X - Reference Card
 X - Protocol Summary
 X - User Settings
 - Content Page
