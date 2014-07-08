@@ -75,11 +75,74 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         }
     };
 
+    /*PROTOCOL*/
+
+    var protocolList = {
+        url:'comment',
+        views:{
+            'content@':{
+                controller:'ProtocollistCtrl',
+                templateUrl:'modules/protocol/list/protocolList.html'
+            }
+        }
+    };
+
+    var protocolSettings = {
+        url:'comment',
+        views:{
+            'content@':{
+                controller:'ProtocolsettingsCtrl',
+                templateUrl:'modules/protocol/settings/protocolSettings.html'
+            }
+        }
+    };
+
+    var protocolSummary = {
+        url:'comment',
+        views:{
+            'content@':{
+                controller:'ProtocolsummaryCtrl',
+                templateUrl:'modules/protocol/summary/protocolSummary.html'
+            }
+        }
+    };
+
+    /*USER*/
+
+    var userSignup =  {
+        url:'signup',
+        views:{
+            'content@':{
+                controller:'UsersignupCtrl',
+                templateUrl:'modules/user/settings/userSettings.html'
+            }
+        }
+    };
+
+    var userSettings =  {
+        url:'user',
+        views:{
+            'content@':{
+                controller:'UsersettingsCtrl',
+                templateUrl:'modules/user/settings/userSignup.html'
+            }
+        }
+    };
+
     /* Add New States Above */
     $stateProvider
        .state('app',basicLayout)
        .state('app.home',homeLayout)
+
+       .state('app.user.signup',userSignup)
+       .state('app.user.setting',userSettings)
+
+       .state('app.protocol.list',protocolList)
+       .state('app.protocol.settings',protocolSettings)
+       .state('app.protocol.summary',protocolSummary)
+       // refactor to protocol step card
        .state('app.step',viewStep)
+       // protoypes
        .state('app.test',comment);
 
     $urlRouterProvider.otherwise('/');
