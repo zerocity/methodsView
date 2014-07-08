@@ -1,4 +1,4 @@
-# Todo’s methods.io
+s# Todo’s methods.io
 
 - Mehr  Protokolle einpflegen
 - Step Views stylen
@@ -10,22 +10,22 @@
 ## Views:
 
 X - Start Page
-X - Sign Up
-X - Protocol List
 X - Search List
-X- Protocol Settings
+X - Protocol List
+X - Protocol Settings
 X - Protocol Cards
-	X - Intro Card
-	X - Material Card
-	X - Equipments Card
-	X - Solution Card
-	X - Step Cards
+    X - Intro Card
+    X - Material Card
+    X - Equipments Card
+    X - Solution Card
+    X - Step Cards
     X - Reference Card
 X - Protocol Summary
 X - User Settings
-- Content Page
+X - User Sign Up
 X - Protocol QA Page
 X - Protocol Upload
+- Content Page
 - Features
 
 

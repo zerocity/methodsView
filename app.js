@@ -3,7 +3,7 @@ angular.module('Methods.io', ['ui.bootstrap','ui.utils','ui.router','ngAnimate',
 angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider) {
 
     var basicLayout = {
-          url: '/',
+          url: '/basic',
           views:{
              'topbar':{
                 controller: 'TopbarCtrl',
@@ -58,19 +58,19 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     /*HOME*/
 
     var homeLayout = {
-        url:'comment',
+        url:'/home',
         views:{
             'topbar@':{
-                controller: 'TopbarCtrl',
-                templateUrl:'modules/home/header.html'
+                controller: 'HeaderhomeCtrl',
+                templateUrl:'modules/home/headerHome/headerHome.html'
             },
-             'sidebar@':{ // todo wronge nameing
-                controller: 'SidebarCtrl',
-                templateUrl:'modules/home/nav.html'
+            'sidebar@':{ // todo wronge nameing
+                controller: 'NavhomeCtrl',
+                templateUrl:'modules/home/navHome/navHome.html'
             },
             'content@':{
-                controller:'CommentViewCtrl',
-                templateUrl:'modules/home/home.html'
+                controller:'ContenthomeCtrl',
+                templateUrl:'modules/home/contentHome.html'
             }
         }
     };
@@ -78,6 +78,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     /* Add New States Above */
     $stateProvider
        .state('app',basicLayout)
+       .state('app.home',homeLayout)
        .state('app.step',viewStep)
        .state('app.test',comment);
 
