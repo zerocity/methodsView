@@ -3,6 +3,9 @@
 - Mehr  Protokolle einpflegen
 - Step Views stylen
 
+- improving json schema // Step card
+    - more generic
+    - to many spezial cases
 
 ## Views:
 
@@ -65,8 +68,6 @@ X - Protocol Upload
 ### Protocol Upload
 - uploader
 
-
-
 # Future Stuff
 
 - revision system entered values + reason for change the value
@@ -76,5 +77,3 @@ X - Protocol Upload
 - Github Features
 - Explorations
 - Time Management
-
-
