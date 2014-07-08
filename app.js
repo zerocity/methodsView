@@ -55,6 +55,26 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         }
     };
 
+    /*HOME*/
+
+    var homeLayout = {
+        url:'comment',
+        views:{
+            'topbar@':{
+                controller: 'TopbarCtrl',
+                templateUrl:'modules/home/header.html'
+            },
+             'sidebar@':{ // todo wronge nameing
+                controller: 'SidebarCtrl',
+                templateUrl:'modules/home/nav.html'
+            },
+            'content@':{
+                controller:'CommentViewCtrl',
+                templateUrl:'modules/home/home.html'
+            }
+        }
+    };
+
     /* Add New States Above */
     $stateProvider
        .state('app',basicLayout)
