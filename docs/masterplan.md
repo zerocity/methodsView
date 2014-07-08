@@ -9,22 +9,26 @@ s# Todo’s methods.io
 
 ## Views:
 
-X - Start Page
-X - Search List
-X - Protocol List
-X - Protocol Settings
-X - Protocol Cards
+X - Start Page              /home and /
+X - Protocol Upload         /home/upload or /home/submit /submit
+X - Search List             /search
+
+X - Protocol List           /protocol/list
+X - Protocol Settings       /protocol/settings
+X - Protocol Cards          /protocol/
     X - Intro Card
     X - Material Card
     X - Equipments Card
     X - Solution Card
-    X - Step Cards
+    X - Step Cards          /protocol/:protocol/:group/:id
     X - Reference Card
-X - Protocol Summary
-X - User Settings
-X - User Sign Up
-X - Protocol QA Page
-X - Protocol Upload
+X - Protocol Summary        /protocol/summary
+
+X - Protocol QA Page        /protocol/qa
+
+X - User Settings           /user/settings
+X - User Sign Up            /user/signup
+
 - Content Page
 - Features
 
