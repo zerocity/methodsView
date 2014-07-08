@@ -12,12 +12,12 @@ X - Protocol List
 X - Search List
 X- Protocol Settings
 - Protocol Cards
-	- Intro Card
+	X - Intro Card
 	- Material Card
-	- Equipments Card
-	- Solution Card
-	- Step Cards
-    - Reference Card
+	X - Equipments Card
+	X - Solution Card
+	X - Step Cards
+    X - Reference Card
 X - Protocol Summary
 X - User Settings
 - Content Page
