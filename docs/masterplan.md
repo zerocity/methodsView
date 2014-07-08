@@ -11,9 +11,9 @@ X - Sign Up
 X - Protocol List
 X - Search List
 X- Protocol Settings
-- Protocol Cards
+X - Protocol Cards
 	X - Intro Card
-	- Material Card
+	X - Material Card
 	X - Equipments Card
 	X - Solution Card
 	X - Step Cards
