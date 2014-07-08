@@ -1,5 +1,8 @@
 <ul >
     <li ng-repeat="step in model">
-        <a ui-sref="app.step({protocol:protocolId, group:groupId, id:$index + 1})" ui-sref-active="arrow_box"><i>{{$index +1 }}.</i> </a>
+        <a ui-sref="app.step({
+            protocol:protocolId,
+            group:groupId,
+            id:$index + 1 })" ui-sref-active="arrow_box"><i>{{$index +1 }}.</i> </a>
     </li>
 </ul>

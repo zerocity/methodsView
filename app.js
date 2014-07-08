@@ -5,15 +5,15 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     var basicLayout = {
           url: '/basic',
           views:{
-             'topbar':{
+             'topbar@':{
                 controller: 'TopbarCtrl',
                 templateUrl:'modules/method/topBar/topBar.html'
              },
-             'sidebar':{ // todo wronge nameing
+             'sidebar@':{ // todo wronge nameing
                 controller: 'SidebarCtrl',
                 templateUrl:'modules/method/sideBar/sideBar.html'
              },
-             'content':{
+             'content@':{
                 controller: 'StepViewCtrl',
                 templateUrl:'modules/method/step-view/step-view.html'
              }
@@ -76,11 +76,11 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     };
 
     var homeUpload = {
-        url:'upload',
+        url:'/upload',
         views:{
             'content@':{
                 controller:'UploadCtrl',
-                templateUrl:'modules/protocol/list/protocolList.html'
+                templateUrl:'modules/home/upload/upload.html'
             }
         }
     };
@@ -88,7 +88,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     /*PROTOCOL*/
 
     var protocolList = {
-        url:'comment',
+        url:'protocol/list',
         views:{
             'content@':{
                 controller:'ProtocollistCtrl',
@@ -98,7 +98,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     };
 
     var protocolSettings = {
-        url:'comment',
+        url:'protocol/settings',
         views:{
             'content@':{
                 controller:'ProtocolsettingsCtrl',
@@ -108,7 +108,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     };
 
     var protocolSummary = {
-        url:'comment',
+        url:'protocol/summary',
         views:{
             'content@':{
                 controller:'ProtocolsummaryCtrl',
@@ -120,42 +120,42 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     /*USER*/
 
     var userSignup =  {
-        url:'signup',
+        url:'user/signup',
         views:{
             'content@':{
                 controller:'UsersignupCtrl',
-                templateUrl:'modules/user/settings/userSettings.html'
+                templateUrl:'modules/user/settings/userSignup.html'
             }
         }
     };
 
     var userSettings =  {
-        url:'user',
+        url:'user/settings',
         views:{
             'content@':{
                 controller:'UsersettingsCtrl',
-                templateUrl:'modules/user/settings/userSignup.html'
+                templateUrl:'modules/user/settings/userSettings.html'
             }
         }
     };
 
     /* Add New States Above */
     $stateProvider
-       .state('app',basicLayout)                                // route --> /basic
 
-       .state('home',homeLayout)                                // route --> /
-//fix it        .state('home.upload',homeLayout)                         // TODO route --> /upload
+        .state('app',homeLayout)                                // route --> /basic
+        .state('app.basic',basicLayout)                                // route --> /
+        .state('app.protocolUpload',homeUpload)                         // TODO route --> /upload
 
-       .state('user.signup',userSignup)                         // route --> /user/signup
-       .state('user.setting',userSettings)                      // route --> /user/settings
+        .state('app.userSignup',userSignup)                         // route --> /user/signup
+        .state('app.userSetting',userSettings)                      // route --> /user/settings
 
-       .state('app.protocol.list',protocolList)                 // route --> /protocol/list
-       .state('app.protocol.settings',protocolSettings)         // route --> /protocol/settings
-       .state('app.protocol.summary',protocolSummary)           // route --> /protocol/:ID/summary
-       // refactor to protocol step card
-       .state('app.step',viewStep)
-       // protoypes
-       .state('app.test',comment);
+        .state('app.protocolList',protocolList)                 // route --> /protocol/list
+        .state('app.protocolSettings',protocolSettings)         // route --> /protocol/settings
+        .state('app.protocolSummary',protocolSummary)           // route --> /protocol/:ID/summary
+        // refactor to protocol step card
+        .state('app.step',viewStep)
+        // protoypes
+        .state('app.test',comment);
 
     $urlRouterProvider.otherwise('/');
 
