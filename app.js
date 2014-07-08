@@ -75,6 +75,16 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         }
     };
 
+    var homeUpload = {
+        url:'upload',
+        views:{
+            'content@':{
+                controller:'UploadCtrl',
+                templateUrl:'modules/protocol/list/protocolList.html'
+            }
+        }
+    };
+
     /*PROTOCOL*/
 
     var protocolList = {
@@ -134,14 +144,14 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
        .state('app',basicLayout)                                // route --> /basic
 
        .state('home',homeLayout)                                // route --> /
-       .state('home.upload',homeLayout)                         // TODO route --> /upload
+//fix it        .state('home.upload',homeLayout)                         // TODO route --> /upload
 
        .state('user.signup',userSignup)                         // route --> /user/signup
        .state('user.setting',userSettings)                      // route --> /user/settings
 
-       .state('app.protocol.list',protocolList)                 //
-       .state('app.protocol.settings',protocolSettings)
-       .state('app.protocol.summary',protocolSummary)
+       .state('app.protocol.list',protocolList)                 // route --> /protocol/list
+       .state('app.protocol.settings',protocolSettings)         // route --> /protocol/settings
+       .state('app.protocol.summary',protocolSummary)           // route --> /protocol/:ID/summary
        // refactor to protocol step card
        .state('app.step',viewStep)
        // protoypes
