@@ -1,4 +1,27 @@
-<div class="col-md-12" ng-controller="ProtocollistCtrl">
+<div class="col-md-offset-1 col-md-11" ng-controller="ProtocollistCtrl">
+    <h1>Protocol list</h1>
+    <ul>
+        <li class="list-unstyled list-protocol" ng-repeat="protocol in protocols">
+            <a ui-sref="app.step({
+                protocol:$index,
+                group:0,
+                id:1})" ui-sref-active="arrow_box">
+                {{protocol.title}}
+            </a>
+            <ul>
+                <li class="list-unstyled" ng-repeat="group in protocol.content.procedure">
+                    Section : <a ui-sref="app.step({
+                        protocol:$parent.$index,
+                        group:$index,
+                        id:1})" ui-sref-active="arrow_box">
+                        {{group.processGroupTitle}}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
+    <button class="btn btn-default" type="button" ng-click="debug = !debug">debug</button>
+    <pre ng-show="debug" ng-repeat="protocol in protocols">{{ protocol | json }}</pre>
 
 </div>
