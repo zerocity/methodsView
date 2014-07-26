@@ -1,14 +1,45 @@
-<div class="col-sm-offset-1 col-sm-11" ng-controller="ContenthomeCtrl">
+<div class="col-xs-offset-2 col-sm-10" ng-controller="ContenthomeCtrl">
 
-    <h1>content</h1>
-    <li><a ui-sref="app.basic" ui-sref-active="arrow_box"><i>Method view</i> </a></li>
-    <li><a ui-sref="app.protocolUpload" ui-sref-active="arrow_box"><i>upload</i> </a></li>
+    <h1>Content</h1>
+    <ul class="list-unstyled">
 
-    <li><a ui-sref="app.userSignup" ui-sref-active="arrow_box"><i>Signup</i> </a></li>
-    <li><a ui-sref="app.userSetting" ui-sref-active="arrow_box"><i>User Settings</i> </a></li>
+        <li>
+            Home
+            <ul>
+                <li><a ui-sref="app.protocolUpload" ui-sref-active="arrow_box"><i>Upload | modules/home/upload</i> </a>
+                </li>
+            </ul>
+        </li>
 
-    <li><a ui-sref="app.protocolList" ui-sref-active="arrow_box"><i>app.protocol.list</i> </a></li>
-    <li><a ui-sref="app.protocolSettings" ui-sref-active="arrow_box"><i>app.protocol.settings</i> </a></li>
-    <li><a ui-sref="app.protocolSummary" ui-sref-active="arrow_box"><i>app.protocol.summary</i> </a></li>
+        <li>
+            User
+            <ul>
+                <li><a ui-sref="app.userSignup" ui-sref-active="arrow_box"><i> Signup | modules/user/Signup</i> </a>
+                </li>
+                <li><a ui-sref="app.userSetting" ui-sref-active="arrow_box"><i> User Settings | modules/user/settings</i> </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>Protocol
+            <ul>
+                <li><a ui-sref="app.protocolList" ui-sref-active="arrow_box"><i>Protocol list | modules/prot/col.list</i> </a>
+                </li>
+                <li><a ui-sref="app.protocolSettings" ui-sref-active="arrow_box"><i>Protocol Setting | modules/prot/col.settings</i> </a>
+                </li>
+                <li><a ui-sref="app.protocolSummary" ui-sref-active="arrow_box"><i>Procotoll Summary | modules/prot/col.summary</i> </a>
+                </li>
+                <li><a ui-sref="app.protocolQA" ui-sref-active="arrow_box"><i>Procokol QA | modules/prot/col.qa</i> </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>Old
+            <ul>
+                <li><a ui-sref="app.olview" ui-sref-active="arrow_box"><i>Old View (steps in list form)</i> </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
 </div>

@@ -1,4 +1,9 @@
-<div ng-controller="StepViewCtrl">
+<aside id="toc" ui-view="navbar"></aside>
+
+<div class="col-xs-offset-1 col-md-11" ng-controller="StepViewCtrl">
+    <br>
+    <button class="btn btn-default" type="button" ng-click="debug = !debug">debug</button>
+    <pre ng-show="debug" >{{ protocol | json }}</pre>
 
     <section id="page">
         <h1 class="groupTitle">{{ protocol.processGroupTitle}}</h1>
