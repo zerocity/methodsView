@@ -10,25 +10,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         views:{
             'topbar':{
                 controller: 'HeaderhomeCtrl',
-                templateUrl:'modules/home/headerHome/headerHome.html'
-            },
-            'content':{
-                controller:'ContenthomeCtrl',
-                templateUrl:'/modules/home/contentHome/contentHome.html'
-            }
-        }
-    };
-
-    var homeLayout = {
-        url:'/',
-        views:{
-            'topbar':{
-                controller: 'HeaderhomeCtrl',
-                templateUrl:'modules/home/headerHome/headerHome.html'
-            },
-            'navbar':{ // todo wrong nameing
-                controller: 'NavhomeCtrl',
-                templateUrl:'modules/home/navHome/navHome.html'
+                templateUrl:'/modules/home/headerHome/headerHome.html'
             },
             'content':{
                 controller:'ContenthomeCtrl',
@@ -55,11 +37,11 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         views:{
                 'navbar@':{
                     controller: 'SidebarChildCtrl',
-                    templateUrl:'modules/method/sideBar/sideBar.html'
+                    templateUrl:'/modules/method/sideBar/sideBar.html'
                 },
                'content@':{
                   controller: 'StepidCtrl',
-                  templateUrl:'modules/method/stepId/stepId.html'
+                  templateUrl:'/modules/method/stepId/stepId.html'
                }
          }
     };
@@ -69,7 +51,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         views:{
             'content@':{
                 controller:'CommentViewCtrl',
-                templateUrl:'modules/comment/comment-view/comment-view.html'
+                templateUrl:'/modules/comment/comment-view/comment-view.html'
             }
         }
     };
@@ -81,7 +63,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         views:{
             'content@':{
                 controller:'UploadCtrl',
-                templateUrl:'modules/home/upload/upload.html'
+                templateUrl:'/modules/home/upload/upload.html'
             }
         }
     };
@@ -93,7 +75,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         views:{
             'content@':{
                 controller:'ProtocollistCtrl',
-                templateUrl:'modules/protocol/list/protocolList.html'
+                templateUrl:'/modules/protocol/list/protocolList.html'
             }
         }
     };
@@ -103,7 +85,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         views:{
             'content@':{
                 controller:'ProtocolsettingsCtrl',
-                templateUrl:'modules/protocol/settings/protocolSettings.html'
+                templateUrl:'/modules/protocol/settings/protocolSettings.html'
             }
         }
     };
@@ -113,7 +95,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         views:{
             'content@':{
                 controller:'ProtocolsummaryCtrl',
-                templateUrl:'modules/protocol/summary/protocolSummary.html'
+                templateUrl:'/modules/protocol/summary/protocolSummary.html'
             }
         }
     };
@@ -123,7 +105,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         views:{
             'content@':{
                 controller:'ProtocolqaCtrl',
-                templateUrl:'modules/protocol/qa/protocolQA.html'
+                templateUrl:'/modules/protocol/qa/protocolQA.html'
             }
         }
     };
@@ -135,7 +117,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         views:{
             'content@':{
                 controller:'UsersignupCtrl',
-                templateUrl:'modules/user/settings/userSignup.html'
+                templateUrl:'/modules/user/signup/userSignup.html'
             }
         }
     };
@@ -145,7 +127,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         views:{
             'content@':{
                 controller:'UsersettingsCtrl',
-                templateUrl:'modules/user/settings/userSettings.html'
+                templateUrl:'/modules/user/settings/userSettings.html'
             }
         }
     };
@@ -157,15 +139,15 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
           views:{
              'topbar@':{
                 controller: 'TopbarCtrl',
-                templateUrl:'modules/method/topBar/topBar.html'
+                templateUrl:'/modules/method/topBar/topBar.html'
              },
              'navbar':{ // rename controlers and html files also test files update needed in index file
                 controller: 'SidebarCtrl',
-                templateUrl:'modules/method/sideBar/sideBar.html'
+                templateUrl:'/modules/method/sideBar/sideBar.html'
              },
              'content@':{
                 controller: 'StepViewCtrl',
-                templateUrl:'modules/method/step-view/step-view.html'
+                templateUrl:'/modules/method/step-view/step-view.html'
              }
           }
     };
