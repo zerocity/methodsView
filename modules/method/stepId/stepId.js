@@ -6,11 +6,15 @@ angular.module('Methods.io').controller('StepidCtrl',function($scope,stepService
         protocol = stepService[protocolId],
 
         main  = stepService[protocolId].content.procedure, // this protocol have only 1 group
-        nextId  = parseInt(id) + 1;
+        currentStepId  = parseInt(id) ;
 
     $scope.step = main[group].processSteps[id-1];
     $scope.currentId = id;
-    $scope.nextId = nextId;
-    $scope.prevId = nextId-2;
+
+    $scope.currentProtocol = parseInt(protocolId);
+    $scope.currentGroup = parseInt(group);
+
+    $scope.nextId = currentStepId + 1;
+    $scope.prevId = currentStepId - 1;
 
 });
