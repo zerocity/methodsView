@@ -9,7 +9,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
                 controller: 'TopbarCtrl',
                 templateUrl:'modules/method/topBar/topBar.html'
              },
-             'sidebar@':{ // todo wronge nameing
+             'navbar@':{ // todo wronge nameing
                 controller: 'SidebarCtrl',
                 templateUrl:'modules/method/sideBar/sideBar.html'
              },
@@ -29,12 +29,12 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
                     group  = $stateParams.group;
                 var protocol  = stepService[protocolId].content.procedure;
                 var steps = protocol[group].processSteps;
-                console.log(steps);
+                //console.log(steps);
                 return {'protocolId':protocolId,'group':group,'steps': steps,'stepId':id};
             }
         },
         views:{
-                'sidebar@':{
+                'navbar@':{
                     controller: 'SidebarChildCtrl',
                     templateUrl:'modules/method/sideBar/sideBar.html'
                 },
@@ -64,7 +64,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
                 controller: 'HeaderhomeCtrl',
                 templateUrl:'modules/home/headerHome/headerHome.html'
             },
-            'sidebar':{ // todo wronge nameing
+            'navbar':{ // todo wrong nameing
                 controller: 'NavhomeCtrl',
                 templateUrl:'modules/home/navHome/navHome.html'
             },
