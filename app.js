@@ -19,24 +19,6 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         }
     };
 
-    var oldView = {
-          url: 'basic',
-          views:{
-             'topbar@':{
-                controller: 'TopbarCtrl',
-                templateUrl:'modules/method/topBar/topBar.html'
-             },
-             'navbar':{ // rename controlers and html files also test files update needed in index file
-                controller: 'SidebarCtrl',
-                templateUrl:'modules/method/sideBar/sideBar.html'
-             },
-             'content@':{
-                controller: 'StepViewCtrl',
-                templateUrl:'modules/method/step-view/step-view.html'
-             }
-          }
-    };
-
     var homeLayout = {
         url:'/',
         views:{
@@ -166,6 +148,26 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
                 templateUrl:'modules/user/settings/userSettings.html'
             }
         }
+    };
+
+    /*OLDVIEWS*/
+
+    var oldView = {
+          url: 'basic',
+          views:{
+             'topbar@':{
+                controller: 'TopbarCtrl',
+                templateUrl:'modules/method/topBar/topBar.html'
+             },
+             'navbar':{ // rename controlers and html files also test files update needed in index file
+                controller: 'SidebarCtrl',
+                templateUrl:'modules/method/sideBar/sideBar.html'
+             },
+             'content@':{
+                controller: 'StepViewCtrl',
+                templateUrl:'modules/method/step-view/step-view.html'
+             }
+          }
     };
 
     /* Add New States Above */
