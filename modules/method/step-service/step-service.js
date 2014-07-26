@@ -379,7 +379,7 @@ var humanAxl = {
   ],
   "procedure": [
     {
-      "processGroupTitle": "General Elisa Protocol - Plate Preparation",
+      "processGroupTitle": "General Elisa Protocol - Coating",
       "processSteps": [
         {
           "processStepId": 1,
@@ -435,7 +435,7 @@ var humanAxl = {
       ]
     },
     {
-      "processGroupTitle": "General Elisa Protocol - Plate Preparation",
+      "processGroupTitle": "General Elisa Protocol - Solution",
       "processSteps": [
         {
           "processStepId": 1,
