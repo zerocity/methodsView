@@ -31,23 +31,12 @@
 
   <!-- Main App JS -->
   <script src="app.js"></script>
-  <script src="modules/method/step-view/step-view.js"></script>
-  <script src="modules/method/step-service/step-service.js"></script>
-  <script src="modules/method/topBar/topBar.js"></script>
-  <script src="modules/method/sideBar/sideBar.js"></script>
-  <script src="modules/method/sideBar/sideBarChild.js"></script>
-  <script src="modules/comment/comment-service/comment-service.js"></script>
-  <script src="modules/comment/comment-view/comment-view.js"></script>
-  <script src="modules/method/directive/resize.js"></script>
-  <script src="modules/method/stepId/stepId.js"></script>
-  <script src="modules/protocol/list/protocolList.js"></script>
-  <script src="modules/protocol/settings/protocolSettings.js"></script>
-  <script src="modules/protocol/summary/protocolSummary.js"></script>
-  <script src="modules/user/settings/userSettings.js"></script>
-  <script src="modules/user/signup/userSignup.js"></script>
   <script src="modules/home/navHome/navHome.js"></script>
   <script src="modules/home/contentHome/contentHome.js"></script>
   <script src="modules/home/headerHome/headerHome.js"></script>
+  <script src="modules/protocol/list/protocolList.js"></script>
+  <script src="modules/protocol/settings/protocolSettings.js"></script>
+  <script src="modules/protocol/summary/protocolSummary.js"></script>
   <script src="modules/protocol/cards/intro-view/intro-view.js"></script>
   <script src="modules/protocol/cards/material-view/material-view.js"></script>
   <script src="modules/protocol/cards/equipment-view/equipment-view.js"></script>
@@ -55,14 +44,28 @@
   <script src="modules/protocol/cards/step/step-view/step-view.js"></script>
   <script src="modules/protocol/cards/reference/reference-view.js"></script>
   <script src="modules/protocol/qa/protocolQA.js"></script>
+  <script src="modules/method/step-view/step-view.js"></script>
+  <script src="modules/method/step-service/step-service.js"></script>
+  <script src="modules/method/topBar/topBar.js"></script>
+  <script src="modules/method/sideBar/sideBar.js"></script>
+  <script src="modules/method/sideBar/sideBarChild.js"></script>
+  <script src="modules/method/directive/resize.js"></script>
+  <script src="modules/method/stepId/stepId.js"></script>
+  <script src="modules/comment/comment-service/comment-service.js"></script>
+  <script src="modules/comment/comment-view/comment-view.js"></script>
+  <script src="modules/user/settings/userSettings.js"></script>
+  <script src="modules/user/signup/userSignup.js"></script>
   <script src="modules/home/upload/upload.js"></script>
   <!-- Add New Component JS Above -->
 
 
    <header ui-view="topbar"></header>
-   <!-- <aside id="toc" ui-view="sidebar"></aside> -->
-   <aside id="toc" ui-view="navbar"></aside>
    <div class="content" id="main" ui-view="content"></div>
+
+   <!-- <aside id="toc" ui-view="sidebar"></aside>
+      <aside id="toc" ui-view="navbar"></aside>
+    navbar / sidebar will be included in content views
+    -->
 
 </body>
 </html>
