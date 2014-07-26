@@ -2,14 +2,31 @@ angular.module('Methods.io', ['ui.bootstrap','ui.utils','ui.router','ngAnimate',
 
 angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider) {
 
-    var basicLayout = {
-          url: '/basic',
+    /*LAYOUT*/
+
+    // root layout
+    var defaultLayout = {
+        url:'/',
+        views:{
+            'topbar':{
+                controller: 'HeaderhomeCtrl',
+                templateUrl:'modules/home/headerHome/headerHome.html'
+            },
+            'content':{
+                controller:'ContenthomeCtrl',
+                templateUrl:'/modules/home/contentHome/contentHome.html'
+            }
+        }
+    };
+
+    var oldView = {
+          url: 'basic',
           views:{
              'topbar@':{
                 controller: 'TopbarCtrl',
                 templateUrl:'modules/method/topBar/topBar.html'
              },
-             'navbar@':{ // todo wronge nameing
+             'navbar':{ // rename controlers and html files also test files update needed in index file
                 controller: 'SidebarCtrl',
                 templateUrl:'modules/method/sideBar/sideBar.html'
              },
@@ -19,6 +36,26 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
              }
           }
     };
+
+    var homeLayout = {
+        url:'/',
+        views:{
+            'topbar':{
+                controller: 'HeaderhomeCtrl',
+                templateUrl:'modules/home/headerHome/headerHome.html'
+            },
+            'navbar':{ // todo wrong nameing
+                controller: 'NavhomeCtrl',
+                templateUrl:'modules/home/navHome/navHome.html'
+            },
+            'content':{
+                controller:'ContenthomeCtrl',
+                templateUrl:'/modules/home/contentHome/contentHome.html'
+            }
+        }
+    };
+
+    // Method Step view
 
     var viewStep = {
         url:'protocol/:protocol/:group/:id',
@@ -56,24 +93,6 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     };
 
     /*HOME*/
-
-    var homeLayout = {
-        url:'/',
-        views:{
-            'topbar':{
-                controller: 'HeaderhomeCtrl',
-                templateUrl:'modules/home/headerHome/headerHome.html'
-            },
-            'navbar':{ // todo wrong nameing
-                controller: 'NavhomeCtrl',
-                templateUrl:'modules/home/navHome/navHome.html'
-            },
-            'content':{
-                controller:'ContenthomeCtrl',
-                templateUrl:'/modules/home/contentHome/contentHome.html'
-            }
-        }
-    };
 
     var homeUpload = {
         url:'/upload',
@@ -117,6 +136,16 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         }
     };
 
+    var protocolQA = {
+        url:'protocol/qc',
+        views:{
+            'content@':{
+                controller:'ProtocolqaCtrl',
+                templateUrl:'modules/protocol/qa/protocolQA.html'
+            }
+        }
+    };
+
     /*USER*/
 
     var userSignup =  {
@@ -142,8 +171,8 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
     /* Add New States Above */
     $stateProvider
 
-        .state('app',homeLayout)                                // route --> /basic
-        .state('app.basic',basicLayout)                                // route --> /
+        .state('app',defaultLayout)                                // route --> /
+        .state('app.oldView',oldView)                                // route --> /basic
         .state('app.protocolUpload',homeUpload)                         // TODO route --> /upload
 
         .state('app.userSignup',userSignup)                         // route --> /user/signup
@@ -152,6 +181,7 @@ angular.module('Methods.io').config(function($stateProvider, $urlRouterProvider)
         .state('app.protocolList',protocolList)                 // route --> /protocol/list
         .state('app.protocolSettings',protocolSettings)         // route --> /protocol/settings
         .state('app.protocolSummary',protocolSummary)           // route --> /protocol/:ID/summary
+        .state('app.protocolQA',protocolQA)           // route --> /protocol/:ID/summary
         // refactor to protocol step card
         .state('app.step',viewStep)
         // protoypes
