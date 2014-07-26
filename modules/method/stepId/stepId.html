@@ -59,8 +59,8 @@
 
         <section class="action">
             <section class="inner">
-                <a ui-sref="app.step({protocol:0 , group:0, id:prevId})" class="btn btn-default pull-left" >back</a>
-                <a ui-sref="app.step({protocol:0 , group:0, id:nextId})" class="btn btn-default pull-right" >next</a>
+                <a ui-sref="app.step({protocol:currentProtocol , group:currentGroup, id:prevId})" class="btn btn-default pull-left" >back</a>
+                <a ui-sref="app.step({protocol:currentProtocol , group:currentGroup, id:nextId})" class="btn btn-default pull-right" >next</a>
             </section>
         </section>
     </article>
